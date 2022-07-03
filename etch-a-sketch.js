@@ -3,37 +3,28 @@
 
 
 
-
+// function for creating divs and assigning them the gridDiv class
 function createDiv() {
     var div = document.createElement("div");
     div.setAttribute("class", "gridDiv");
    return div;
   }
   
-  var divs = [
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv(),
-    createDiv()
-  ];
+ 
   
+  // loop which creates 16 divs and appends them to the docFrag
   var docFrag = document.createDocumentFragment();
-  for(var i = 0; i < divs.length; i++) {
-    docFrag.appendChild(divs[i]); // Note that this does NOT go to the DOM
+  for(var i = 0; i < 256; i++) {
+      var div = createDiv();
+      docFrag.appendChild(div); 
+
+// creates line break every fourth div
+      if (i % 16 == 0)
+      {
+        div.classList.add("clear");
+      }
   }
   
-// Appends all divs at once
+// appends docFrag to container div
 const cont = document.querySelector('div.container');
   cont.appendChild(docFrag);
