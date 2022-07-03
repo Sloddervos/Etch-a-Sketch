@@ -24,7 +24,33 @@ function createDiv() {
         div.classList.add("clear");
       }
   }
-  
+ 
+
+
+
 // appends docFrag to container div
 const cont = document.querySelector('div.container');
   cont.appendChild(docFrag);
+
+  
+ // selects all divs that make up the grid
+   const divs = document.querySelectorAll('div.gridDiv'); 
+
+   // loop which iterates through all divs so event listeners are added to each
+   for (let i = 0; i < divs.length; i++) {
+  
+    divs[i].addEventListener('mouseover', hoverover);
+
+     divs[i].addEventListener('mouseleave', mouseaway); 
+     
+// functions inside loop since otherwise it doesn't work
+    function hoverover() {
+      divs[i].classList.add('hoverColour');
+     }
+    function mouseaway(){
+      divs[i].classList.remove('hoverColour');
+
+    } 
+     
+
+   }
