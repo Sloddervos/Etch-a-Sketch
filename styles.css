@@ -1,8 +1,7 @@
 .gridDiv
 {
-
-    height: 30px;
-    width: 30px;
+height: 5px;
+width: 5px;
     border-style: solid;
     float: left;
 }
@@ -15,4 +14,9 @@
 .hoverColour
 {
     background-color: bisque;
+}
+
+.container
+{
+border: 5px red solid;
 }
